@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import playwrightConfig from '../playwright.config';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc');
@@ -364,6 +365,7 @@ test.describe('Routing', () => {
       await page.getByRole('link', { name: 'Active' }).click();
     });
 
+  
     await test.step('Showing completed items', async () => {
       await page.getByRole('link', { name: 'Completed' }).click();
     });
